@@ -1,14 +1,24 @@
 {% extends 'layout/mainlayout.html.twig' %}
 
 {% block headercontent %}
-    <h1>Trains</h1>
+    <h2>Locomotives</h2>
 {% endblock %}
 
 {% block bodycontent %}
     {% for locomotive in locomotives %}
         <article>
-            <h2>{{ locomotive.id }} {{ locomotive.serial }}</h2>
-            <p>more...</p>
+            <div class="panel panel-default">
+                <div class="panel-heading">Loco #{{ locomotive.id }} Serial : {{ locomotive.serial }}</div>
+                <div class="panel-body">
+                    Date MEC : {{ locomotive.releasedate|date("d-m-Y") }}
+                    <br />
+                    Type #{{ locomotive.type.id }} {{ locomotive.type.resume }} - {{ locomotive.type.energymode.mode }}
+                    <hr />
+                    Désignation du type : {{ locomotive.type.designation }}
+                    <br />
+                    <span class="small">{{ locomotive.type.description }}</span>
+                </div>
+            </div>
         </article>
     {% endfor %}
 {% endblock %}

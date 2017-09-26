@@ -13,7 +13,12 @@ class LocomotiveType
 {
     private $id;
     private $designation;
-    private $energymodeid;
+    /**
+     * Associated energy mode.
+     *
+     * @var \trains\Entity\EnergyMode
+     */
+    private $energymode;
     private $resume;
     private $description;
 
@@ -52,17 +57,17 @@ class LocomotiveType
     /**
      * @return mixed
      */
-    public function getEnergymodeid()
+    public function getEnergymode()
     {
-        return $this->energymodeid;
+        return $this->energymode;
     }
 
     /**
-     * @param mixed $energymodeid
+     * @param mixed $energymode
      */
-    public function setEnergymodeid($energymodeid)
+    public function setEnergymode($energymode)
     {
-        $this->energymodeid = $energymodeid;
+        $this->energymode = $energymode;
     }
 
     /**

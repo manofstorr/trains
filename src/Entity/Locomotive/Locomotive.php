@@ -17,7 +17,7 @@ class Locomotive
     /**
      * Associated locomotive type.
      *
-     * @var \trains\Entity\LocomotiveType
+     * @var \trains\Entity\Locomotive\LocomotiveType
      */
     private $type;
 
