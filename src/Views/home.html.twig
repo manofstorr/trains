@@ -9,14 +9,14 @@
 <header>
     <h1>Trains</h1>
 </header>
-<?php
-foreach ($locomotives as $locomotive): ?>
+{% for locomotive in locomotives %}
     <article>
-        <h2><?php echo $locomotive['serial'] . ' #' . $locomotive['id'] ?></h2>
-        <p><?php echo $locomotive['resume'] ?></p>
+        <h2>{{ locomotive.id }} {{ locomotive.serial }}</h2>
+        <p>more...</p>
     </article>
-<?php endforeach ?>
+{% endfor %}
 <footer class="footer">
     manOfStorr
+</footer>
 </body>
 </html>
