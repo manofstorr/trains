@@ -16,7 +16,5 @@ $app->register(new Silex\Provider\AssetServiceProvider(), array(
     'assets.version' => 'v1'
 ));
 
-// Register services.
-$app['dao.locomotive'] = function ($app) {
-    return new trains\Model\Locomotive\LocomotiveModel($app['db']);
-};
+require 'services.php';
+
