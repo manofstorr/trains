@@ -1,0 +1,14 @@
+{% extends 'layout/mainlayout.html.twig' %}
+
+{% block headercontent %}
+    <h1>Trains</h1>
+{% endblock %}
+
+{% block bodycontent %}
+    {% for locomotive in locomotives %}
+        <article>
+            <h2>{{ locomotive.id }} {{ locomotive.serial }}</h2>
+            <p>more...</p>
+        </article>
+    {% endfor %}
+{% endblock %}

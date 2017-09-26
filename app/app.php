@@ -12,6 +12,9 @@ $app->register(new Silex\Provider\DoctrineServiceProvider());
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/../src/Views',
 ));
+$app->register(new Silex\Provider\AssetServiceProvider(), array(
+    'assets.version' => 'v1'
+));
 
 // Register services.
 $app['dao.locomotive'] = function ($app) {

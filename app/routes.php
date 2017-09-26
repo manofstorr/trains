@@ -1,19 +1,14 @@
 <?php
 
 // Home page
-/*
 $app->get('/', function () use ($app) {
-    $locomotives = $app['dao.locomotive']->findAll();
+    return $app['twig']->render('home/home.html.twig');
 
-    ob_start();             // start buffering HTML output
-    require '../src/views/homeView.php';
-    $view = ob_get_clean(); // assign HTML output to $view
-    return $view;
 });
-*/
 
-$app->get('/', function () use ($app) {
+// Home page
+$app->get('/locomotives', function () use ($app) {
     $locomotives = $app['dao.locomotive']->findAll();
-    return $app['twig']->render('home.html.twig', array('locomotives' => $locomotives));
+    return $app['twig']->render('locomotive/locomotiveCollection.html.twig', array('locomotives' => $locomotives));
 
 });
