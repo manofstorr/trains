@@ -6,7 +6,7 @@ $app->get('/', function () use ($app) {
 
 });
 
-// Home page
+// Locomotives Collection page
 $app->get('/locomotives', function () use ($app) {
     $locomotives = $app['dao.locomotive']->findAll();
     return $app['twig']->render('locomotive/locomotiveCollection.html.twig', array('locomotives' => $locomotives));

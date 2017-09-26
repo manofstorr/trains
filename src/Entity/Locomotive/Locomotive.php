@@ -6,15 +6,23 @@
  * Time: 09:24
  */
 
-namespace trains\Entity;
+namespace trains\Entity\Locomotive;
 
 
 class Locomotive
 {
 
     private $id;
-    private $typeid;
+
+    /**
+     * Associated locomotive type.
+     *
+     * @var \trains\Entity\LocomotiveType
+     */
+    private $type;
+
     private $serial;
+
     private $releasedate;
 
     /**
@@ -36,17 +44,17 @@ class Locomotive
     /**
      * @return mixed
      */
-    public function getTypeid()
+    public function getType()
     {
-        return $this->typeid;
+        return $this->type;
     }
 
     /**
-     * @param mixed $typeid
+     * @param mixed $type
      */
-    public function setTypeid($typeid)
+    public function setType($type)
     {
-        $this->typeid = $typeid;
+        $this->type = $type;
     }
 
     /**

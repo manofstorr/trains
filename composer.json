@@ -10,7 +10,9 @@
     "psr-4": {
       "trains\\Views\\": "src/Views",
       "trains\\Model\\": "src/Model",
+      "trains\\Model\\Locomotive\\": "src/Model/Locomotive",
       "trains\\Entity\\": "src/Entity",
+      "trains\\Entity\\Locomotive\\": "src/Entity/Locomotive",
       "trains\\Controller\\": "src/Controller"
     }
   }
