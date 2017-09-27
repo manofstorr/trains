@@ -11,7 +11,7 @@ namespace trains\Model;
 use trains\Model\Model;
 use trains\Entity\EnergyMode;
 
-class energyModeModel extends Model
+class EnergyModeModel extends Model
 {
 
     function findAll(): array

@@ -4,7 +4,7 @@ namespace trains\Model\Car;
 
 use trains\Model\Car;
 
-class carsIterator implements \Iterator
+class CarsIterator implements \Iterator
 {
     private $cars = [];
 

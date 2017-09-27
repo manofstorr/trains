@@ -3,9 +3,9 @@
 namespace trains\Model\Car;
 
 use trains\Model\Model;
-use trains\Entity\Car;
+use trains\Entity\Car\Car;
 
-class carModel extends Model
+class CarModel extends Model
 {
 
     function findAll()
@@ -26,15 +26,15 @@ class carModel extends Model
 
     protected function buildEntityObject(array $row)
     {
-        $carTypeModel = new LocomotiveTypeModel($this->getDb());
+        $carTypeModel = new carTypeModel($this->getDb());
         $carType = $carTypeModel->findById($row['typeid']);
 
         $car = new Car();
         $car->setId($row['id']);
-        // set teh type object
+        // set the type object
         $car->setType($carType);
         $car->setSerial($row['serial']);
-        $car->setReleasedate($row['releasedate']);
+
 
         return $car;
     }

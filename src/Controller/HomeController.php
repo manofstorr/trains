@@ -10,7 +10,7 @@ namespace trains\Controller;
 
 use Silex\Application;
 
-class homeController
+class HomeController
 {
 
     public function indexAction(Application $app)

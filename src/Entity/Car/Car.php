@@ -6,17 +6,23 @@
  * Time: 09:31
  */
 
-namespace trains\Entity;
+namespace trains\Entity\Car;
 
 
 class Car
 {
 
     private $id;
-    private $modelid;
+    /**
+     * Associated car type.
+     *
+     * @var \trains\Entity\Car\CarType
+     */
+    private $type;
     private $serial;
 
     /**
+     *
      * @return mixed
      */
     public function getId()
@@ -35,17 +41,17 @@ class Car
     /**
      * @return mixed
      */
-    public function getModelid()
+    public function getType()
     {
-        return $this->modelid;
+        return $this->type;
     }
 
     /**
-     * @param mixed $modelid
+     * @param mixed $type
      */
-    public function setModelid($modelid)
+    public function setType($type)
     {
-        $this->modelid = $modelid;
+        $this->type = $type;
     }
 
     /**

@@ -2,7 +2,7 @@
 
 namespace trains\Model\Locomotive;
 
-use trains\Model\energyModeModel;
+use trains\Model\EnergyModeModel;
 use trains\Model\Model;
 use trains\Entity\Locomotive\LocomotiveType;
 use trains\Model\EnergyMode;
@@ -51,7 +51,7 @@ class LocomotiveTypeModel extends Model
      */
     protected function buildEntityObject(array $row)
     {
-        $energyModeModel = new energyModeModel($this->getDb());
+        $energyModeModel = new EnergyModeModel($this->getDb());
         $energyMode = $energyModeModel->findById($row['energymodeid']);
 
         $locomotiveType = new LocomotiveType();
