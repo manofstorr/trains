@@ -7,14 +7,20 @@
     "symfony/security": "~3.3",
     "symfony/twig-bridge": "~3.3"
   },
+  "require-dev": {
+    "phpunit/phpunit": "~6.3",
+    "phpunit/dbunit": "~3.0"
+  },
   "autoload": {
     "psr-4": {
       "trains\\Views\\": "src/Views",
       "trains\\Model\\": "src/Model",
       "trains\\Model\\Locomotive\\": "src/Model/Locomotive",
+      "trains\\Model\\Car\\": "src/Model/Car",
       "trains\\Entity\\": "src/Entity",
       "trains\\Entity\\Locomotive\\": "src/Entity/Locomotive",
-      "trains\\Controller\\": "src/Controller"
+      "trains\\Controller\\": "src/Controller",
+      "trains\\Metier\\": "src/Metier"
     }
   }
 }
