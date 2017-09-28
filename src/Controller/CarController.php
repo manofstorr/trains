@@ -32,6 +32,24 @@ class CarController
     }
 
     /**
+     * A simple collection based on the model
+     *
+     * @param Application $app
+     * @return mixed
+     */
+    public function collectionGeneratorAction(Application $app)
+    {
+        $generator = $app['model.car']->carGenerator();
+        $cars = [];
+        foreach ($generator as $cardata) {
+            $carId = $cardata['id'];
+            $cars[$carId] = $app['model.car']->buildEntityObject($cardata);
+        }
+        return $app['twig']->render('car/carCollection.html.twig', ['cars' => $cars]);
+    }
+
+
+    /**
      * An elaborated collection based on filtered data and iterator
      *
      * @param Application $app
