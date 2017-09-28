@@ -32,7 +32,7 @@ class CarController
     }
 
     /**
-     * A simple collection based on the model
+     * A collection build with a generator
      *
      * @param Application $app
      * @return mixed

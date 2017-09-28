@@ -6,7 +6,7 @@ $app['db.options'] = array(
     'charset'  => 'utf8',
     'host'     => 'localhost',
     'port'     => '3306',
-    'dbname'   => 'trains',
+    'dbname'   => 'trains-rollingstock',
     'user'     => 'root',
     'password' => '',
 );

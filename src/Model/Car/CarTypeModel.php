@@ -8,7 +8,7 @@ use trains\Entity\Car\CarType;
 class CarTypeModel extends Model
 {
 
-    function findAll(): array
+    public function findAll(): array
     {
         $sql = 'SELECT `id`, `cargo`, `payload`
                 FROM cartype
@@ -25,7 +25,7 @@ class CarTypeModel extends Model
     }
 
 
-    function findById(int $carTypeId): CarType
+    public function findById(int $carTypeId): CarType
     {
         $sql = 'SELECT `id`, `cargo`, `payload`
                 FROM cartype
@@ -46,7 +46,7 @@ class CarTypeModel extends Model
      * @param array $row The DB row containing CarType data.
      * @return \trains\Entity\Car\CarType
      */
-    protected function buildEntityObject(array $row)
+    protected function buildEntityObject(array $row): carType
     {
         $carType = new carType();
         $carType->setId($row['id']);
