@@ -3,18 +3,23 @@
 {% block titlecontent %}Cars{% endblock %}
 
 {% block headercontent %}
-    <h2>Cars</h2>
+    <h2>Cars
+        {% if type is defined %}
+            of {{ type.cargo }} type
+        {% else %}
+            of all types
+        {% endif %}
+        - ({{ cars|length }})
+    </h2>
 {% endblock %}
 
 {% block bodycontent %}
     {% for car in cars %}
-        <article>
-            <div class="panel panel-default">
-                <div class="panel-heading">Car #{{ car.id }} Serial : {{ car.serial }}</div>
-                <div class="panel-body">
-                    Type #{{ car.type.id }} {{ car.type.cargo }} - {{ car.type.payload }} Ton/payload
-                </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Car #{{ car.id }} Serial : {{ car.serial }}</div>
+            <div class="panel-body">
+                Type #{{ car.type.id }} {{ car.type.cargo }} - {{ car.type.payload }} Ton/payload
             </div>
-        </article>
+        </div>
     {% endfor %}
 {% endblock %}

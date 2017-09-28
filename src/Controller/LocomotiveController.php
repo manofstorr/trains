@@ -9,8 +9,8 @@ class LocomotiveController
 
     public function collectionAction(Application $app)
     {
-        $locomotives = $app['dao.locomotive']->findAll();
-        return $app['twig']->render('locomotive/carCollection.html.twig', ['locomotives' => $locomotives]);
+        $locomotives = $app['model.locomotive']->findAll();
+        return $app['twig']->render('locomotive/locomotiveCollection.html.twig', ['locomotives' => $locomotives]);
     }
 
 }

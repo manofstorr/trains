@@ -4,16 +4,21 @@
 
 // Locomotives
 
-$app['dao.locomotiveType'] = function ($app) {
+$app['model.locomotiveType'] = function ($app) {
     return new trains\Model\Locomotive\LocomotiveTypeModel($app['db']);
 };
 
-$app['dao.locomotive'] = function ($app) {
+$app['model.locomotive'] = function ($app) {
     return new trains\Model\Locomotive\LocomotiveModel($app['db']);
 };
 
 // Cars
 
-$app['dao.car'] = function ($app) {
+$app['model.carType'] = function ($app) {
+    return new trains\Model\Car\CarTypeModel($app['db']);
+};
+
+$app['model.car'] = function ($app) {
     return new trains\Model\Car\CarModel($app['db']);
 };
+

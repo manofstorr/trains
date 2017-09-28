@@ -37,7 +37,6 @@ class CarTypeModel extends Model
         } else {
             throw new \Exception("No car type matching id " . $carTypeId);
         }
-
     }
 
 

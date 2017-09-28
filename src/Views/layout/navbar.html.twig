@@ -20,7 +20,10 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Matériels <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="{{ path('locomotives') }}">Locomotives</a></li>
-                        <li><a href="{{ path('cars') }}">Cars</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{{ path('cars') }}">All cars {foreach style}</a></li>
+                        <li><a href="{{ path('cartypes') }}">Car Types {for iterator showcase}</a></li>
+                        <li role="separator" class="divider"></li>
                         <li><a href="#">Another action</a></li>
                         <li><a href="#">Something else here</a></li>
                         <li role="separator" class="divider"></li>

@@ -8,7 +8,7 @@ use trains\Entity\Car\Car;
 class CarModel extends Model
 {
 
-    function findAll()
+    public function findAll()
     {
         $sql = 'SELECT `id`, `typeid`, `serial`
                 FROM car
@@ -22,6 +22,20 @@ class CarModel extends Model
         }
 
         return $cars;
+    }
+
+    public function carsCountByType ()
+    {
+        $sql = 'SELECT `typeid`, COUNT(`id`) AS C
+                FROM car
+                GROUP BY (`typeid`)
+                ORDER BY id ASC';
+        $result = $this->getDb()->fetchAll($sql);
+        $carsCountByType = [];
+        foreach ($result as $row) {
+            $carsCountByType[$row['typeid']] = $row['C'];
+        }
+        return $carsCountByType;
     }
 
     protected function buildEntityObject(array $row)

@@ -6,37 +6,44 @@ use trains\Model\Car;
 
 class CarsIterator implements \Iterator
 {
+    private $position = 0;
     private $cars = [];
 
-
-    public function fill() {
-
+    public function __construct() {
+        $this->position = 0;
     }
 
+    public function fill(array $cars) {
+        foreach ($cars as $car) {
+            $this->cars[$this->position] = $car;
+            $this->next();
+        }
+        $this->rewind();
+    }
 
     public function current()
     {
-        // TODO: Implement current() method.
+        return $this->cars[$this->position];
     }
 
     public function next()
     {
-        // TODO: Implement next() method.
+        ++$this->position;
     }
 
     public function key()
     {
-        // TODO: Implement key() method.
+        return $this->position;
     }
 
     public function valid()
     {
-        // TODO: Implement valid() method.
+        return isset($this->cars[$this->position]);
     }
 
     public function rewind()
     {
-        // TODO: Implement rewind() method.
+        $this->position = 0;
     }
 
 

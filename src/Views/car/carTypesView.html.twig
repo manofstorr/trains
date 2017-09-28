@@ -1,0 +1,21 @@
+{% extends 'layout/mainlayout.html.twig' %}
+
+{% block titlecontent %}Car Types{% endblock %}
+
+{% block headercontent %}
+    <h2>Car Types</h2>
+{% endblock %}
+
+{% block bodycontent %}
+    {% for carType in carTypes %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Car Type #{{ carType.id }} -
+                Cars : <a href="{{ path('cars_by_type', {'id': carType.id }) }}">{{ carsCountByType[carType.id] }}</a>
+            </div>
+            <div class="panel-body">
+                Description : {{ carType.id }} {{ carType.cargo }} - {{ carType.payload }} Ton/payload
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
