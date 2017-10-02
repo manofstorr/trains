@@ -67,4 +67,19 @@ class CarModel extends Model
         return $this->getDb()->fetchAll($sql);
     }
 
+    public function save(Car $car)
+    {
+        $stmt = $this->getDb()->prepare('INSERT INTO car
+            (`id`, `typeid`, `serial`) 
+            VALUES
+            (null, :type, :serial)');
+        $stmt->execute(
+            [
+                'type'   => $car->getType()->getId(),
+                'serial' => $car->getSerial(),
+            ]);
+
+        return $this->getDb()->lastInsertId();
+    }
+
 }

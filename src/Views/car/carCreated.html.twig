@@ -1,0 +1,12 @@
+{% extends 'layout/mainlayout.html.twig' %}
+
+{% block titlecontent %}Cars{% endblock %}
+
+{% block headercontent %}
+    <h2>Car created</h2>
+{% endblock %}
+
+{% block bodycontent %}
+    {{ car.id }}
+    {% include 'car/carShortView.html.twig' with {'car' : car} %}
+{% endblock %}

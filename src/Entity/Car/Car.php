@@ -8,6 +8,7 @@
 
 namespace trains\Entity\Car;
 
+use Silex\Application;
 
 class Car
 {
@@ -41,7 +42,7 @@ class Car
     /**
      * @return mixed
      */
-    public function getType()
+    public function getType(): CarType
     {
         return $this->type;
     }
@@ -70,5 +71,29 @@ class Car
         $this->serial = $serial;
     }
 
+    /*
+     * Other methods
+     */
+
+    public function isValid()
+    {
+        if (!($this->getType()InstanceOf CarType)) {
+            return false;
+        }
+        if ($this->getSerial() == '') {
+            return false;
+        }
+
+        return true;
+    }
+
+    public function persist(Application $app)
+    {
+        $newCarId = $app['model.car']->save($this);
+        if ($newCarId) {
+            $this->setId($newCarId);
+        }
+
+    }
 
 }

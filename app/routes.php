@@ -29,3 +29,7 @@ $app->get('/car/types', "trains\Controller\CarController::typeCollectionAction")
 // Car By Types page
 $app->get('/cars/by/type/{id}', "trains\Controller\CarController::byTypeCollectionAction")
     ->bind('cars_by_type');
+
+// Car create
+$app->get('/car/create/random', "trains\Controller\CarController::createRandomAction")
+    ->bind('car_random_create');
