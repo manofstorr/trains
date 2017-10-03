@@ -2,14 +2,14 @@
 
 namespace trains\EventListener;
 
-use trains\Controller\Message\MessageController;
+use trains\Service\Message\MessageService;
 
 class trainsListener
 {
     public function onCarCreate($event)
     {
-        $messageController = new MessageController($event);
-        $ack = $messageController->carCreateMessageAction();
+        $messageController = new MessageService($event);
+        $ack = $messageController->carCreateMessage();
 
     }
 }

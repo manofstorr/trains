@@ -1,11 +1,11 @@
 <?php
 
-namespace trains\Controller\Message;
+namespace trains\Service\Message;
 
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Message\AMQPMessage;
 
-class MessageController
+class MessageService
 {
     private $event;
 
@@ -14,7 +14,7 @@ class MessageController
         $this->event = $event;
     }
 
-    public function carCreateMessageAction() :bool
+    public function carCreateMessage() :bool
     {
         $connection = new AMQPStreamConnection('localhost', 5672, 'guest', 'guest');
         $channel = $connection->channel();
