@@ -82,4 +82,14 @@ class CarModel extends Model
         return $this->getDb()->lastInsertId();
     }
 
+    public function getLastInsertedCar()
+    {
+        $sql = 'SELECT `id`, `typeid`, `serial`
+                FROM car
+                ORDER BY `id` DESC LIMIT 1';
+        $row = $this->getDb()->fetchAssoc($sql);
+
+        return $this->buildEntityObject($row);
+    }
+
 }

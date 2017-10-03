@@ -7,6 +7,7 @@
     "symfony/asset": "~3.3",
     "symfony/security": "~3.3",
     "symfony/twig-bridge": "~3.3",
+    "symfony/event-dispatcher": "~3.3",
     "php-amqplib/php-amqplib": "~2.7"
   },
   "require-dev": {
@@ -15,14 +16,7 @@
   },
   "autoload": {
     "psr-4": {
-      "trains\\Views\\": "src/Views",
-      "trains\\Model\\": "src/Model",
-      "trains\\Model\\Locomotive\\": "src/Model/Locomotive",
-      "trains\\Model\\Car\\": "src/Model/Car",
-      "trains\\Entity\\": "src/Entity",
-      "trains\\Entity\\Locomotive\\": "src/Entity/Locomotive",
-      "trains\\Controller\\": "src/Controller",
-      "trains\\Metier\\": "src/Metier"
+      "trains\\": "src/"
     }
   }
 }

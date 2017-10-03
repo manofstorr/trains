@@ -7,7 +7,10 @@
 {% block bodycontent %}
     <article>
         <h2>Welcome</h2>
-
+        <h3><label class="label label-primary">Home page de l'appli "trains-rollingstock" (RS)</label></h3>
+        <br />
+        <p>La vocation de l'appli est de gérer les matériels roulants. Ceux-ci sont communiqués aux autres a
+            applis via la production d messages AMQP.</p>
         <ul class="list-group">
             <label class="label label-primary">Topics</label>
             <li class="list-group-item">Pattern <span class="label label-info">MVC</span></li>
@@ -20,6 +23,8 @@
                     <li>Construction de la vue collection de <em>cars</em></li>
                 </ul>
             </li>
+            <li class="list-group-item">Production de messages <span class="label label-info">AMQP</span></li>
+            <li class="list-group-item">Event listener</li>
             <li class="list-group-item"></li>
         </ul>
     </article>

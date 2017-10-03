@@ -1,7 +1,5 @@
 <?php
 
-
-
 // Home page
 $app->get('/', "trains\Controller\HomeController::indexAction")
     ->bind('home');
@@ -34,11 +32,17 @@ $app->get('/cars/by/type/{id}', "trains\Controller\CarController::byTypeCollecti
 
 // Car create
 $app->get('/car/create/random', "trains\Controller\CarController::createRandomAction")
+    ->bind('car_random_create');
+/* DEPREC : Keep just to see how to call middleware event
+$app->get('/car/create/random', "trains\Controller\CarController::createRandomAction")
     ->bind('car_random_create')
-    ->after(function () {
-        $messageSender = new trains\Metier\RollingStockMessageSender();
-        $messageSender->standardMessage();
+    ->after(function () use ($app) {
+        // here is a message creation using middleware
+        $messageSender = new trains\Message\RollingStockMessageSender();
+        $messageSender->carCreateMessage($app);
     });
+*/
+
 
 // Metier
 // ======

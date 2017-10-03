@@ -3,7 +3,7 @@
 use Symfony\Component\Debug\ErrorHandler;
 use Symfony\Component\Debug\ExceptionHandler;
 use Silex\Provider;
-
+use Symfony\Component\EventDispatcher\EventDispatcher;
 
 // Register global error and exception handlers
 ErrorHandler::register();
@@ -26,5 +26,12 @@ $app->register(new Provider\WebProfilerServiceProvider(), array(
     'profiler.mount_prefix' => '/_profiler', // this is the default
 ));
 
+$listener = new trains\EventListener\trainsListener();
+//$app['dispatcher']->addListener('carcreate', array($listener, 'onCarCreate'));
+
+$app['dispatcher']->addListener('carcreate', function (Symfony\Component\EventDispatcher\Event $event) {
+    $listener = new trains\EventListener\trainsListener();
+    $listener->onCarCreate($event);
+});
 
 require 'services.php';

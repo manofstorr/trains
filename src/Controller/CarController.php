@@ -6,6 +6,7 @@ use Silex\Application;
 use trains\Entity\Car\Car;
 use trains\Model\Car\CarsIterator;
 use trains\Metier;
+use trains\Event\carCreateEvent;
 
 class CarController
 {
@@ -21,6 +22,10 @@ class CarController
         if ($car->isValid()) {
             try {
                 $car->persist($app);
+                // dispatch event
+                $event = new carCreateEvent($car);
+                $app['dispatcher']->dispatch(carCreateEvent::NAME, $event);
+
             }  catch (Exception $e) {
                 echo 'Exception reçue : ', $e->getMessage(), "\n";
             }
