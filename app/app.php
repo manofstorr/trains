@@ -26,4 +26,5 @@ $app->register(new Provider\WebProfilerServiceProvider(), array(
     'profiler.mount_prefix' => '/_profiler', // this is the default
 ));
 
+
 require 'services.php';

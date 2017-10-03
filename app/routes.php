@@ -1,5 +1,7 @@
 <?php
 
+
+
 // Home page
 $app->get('/', "trains\Controller\HomeController::indexAction")
     ->bind('home');
@@ -32,4 +34,15 @@ $app->get('/cars/by/type/{id}', "trains\Controller\CarController::byTypeCollecti
 
 // Car create
 $app->get('/car/create/random', "trains\Controller\CarController::createRandomAction")
-    ->bind('car_random_create');
+    ->bind('car_random_create')
+    ->after(function () {
+        $messageSender = new trains\Metier\RollingStockMessageSender();
+        $messageSender->standardMessage();
+    });
+
+// Metier
+// ======
+$app->get('/metier/rollingstock/create', "trains\Controller\MetierController::rollingStockCreateAction")
+    ->bind('metier_rolling_stock_creation')
+;
+

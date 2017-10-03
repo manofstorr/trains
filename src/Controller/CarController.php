@@ -6,9 +6,6 @@ use Silex\Application;
 use trains\Entity\Car\Car;
 use trains\Model\Car\CarsIterator;
 use trains\Metier;
-use trains\Model\Car\CarModel;
-use trains\Model\Car\CarTypeModel;
-
 
 class CarController
 {
@@ -16,18 +13,17 @@ class CarController
 
     public function createRandomAction(Application $app)
     {
-        // won't use any form
-        // Request : A new car ramdomly generated
-        // make new if valid
-        // returns id on newly inserted car > Will be used to send message
-
         $car = new Car();
         $carData = $this->getRandomCarData();
         $car->setSerial($carData['serial']);
         $carType = $app['model.carType']->findById($carData['type']);
         $car->setType($carType);
         if ($car->isValid()) {
-             $car->persist($app);
+            try {
+                $car->persist($app);
+            }  catch (Exception $e) {
+                echo 'Exception reçue : ', $e->getMessage(), "\n";
+            }
         }
         return $app['twig']->render('car/carCreated.html.twig', ['car' => $car]);
 

@@ -92,8 +92,10 @@ class Car
         $newCarId = $app['model.car']->save($this);
         if ($newCarId) {
             $this->setId($newCarId);
+        } else {
+            // throwing exception avoid listener to send message in case of create NOK
+            throw new \Exception('Car creation has failed.');
         }
-
     }
 
 }

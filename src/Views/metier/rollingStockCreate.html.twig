@@ -1,0 +1,16 @@
+{% extends 'layout/mainlayout.html.twig' %}
+
+{% block titlecontent %}Rolling stock #Metier{% endblock %}
+
+{% block headercontent %}
+    <h2>Metier Page for Rolling Stock</h2>
+{% endblock %}
+
+{% block bodycontent %}
+    <div class="panel panel-default">
+        <div class="panel-heading">Random create car</div>
+        <div class="panel-body">
+            <a href="{{ path('car_random_create') }}" class="btn btn-primary">Create</a>
+        </div>
+    </div>
+{% endblock %}

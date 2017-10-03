@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: d.baudry
- * Date: 02/10/2017
- * Time: 14:00
- */
 
 namespace trains\Metier;
 
