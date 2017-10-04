@@ -6,7 +6,7 @@
  * Time: 15:47
  */
 
-namespace trains\Controller;
+namespace Trains\Controller;
 
 use Silex\Application;
 
@@ -15,7 +15,7 @@ class HomeController
 
     public function indexAction(Application $app)
     {
-        return $app['twig']->render('home/home.html.twig');
+        return $app['twig']->render('Home/Home.html.twig');
     }
 
 }

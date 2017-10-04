@@ -1,10 +1,10 @@
 <?php
-namespace trains\Event;
+namespace Trains\Event;
 
 use Symfony\Component\EventDispatcher\Event;
-use trains\Entity\Car\Car;
+use Trains\Entity\Car\Car;
 
-class carCreateEvent extends Event
+class CarCreateEvent extends Event
 {
     const NAME = 'carcreate';
 

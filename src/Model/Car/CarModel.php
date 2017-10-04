@@ -1,9 +1,9 @@
 <?php
 
-namespace trains\Model\Car;
+namespace Trains\Model\Car;
 
-use trains\Model\Model;
-use trains\Entity\Car\Car;
+use Trains\Model\Model;
+use Trains\Entity\Car\Car;
 
 class CarModel extends Model
 {
@@ -11,7 +11,7 @@ class CarModel extends Model
     public function findAll()
     {
         $sql = 'SELECT `id`, `typeid`, `serial`
-                FROM car
+                FROM Car
                 ORDER BY id ASC';
         $result = $this->getDb()->fetchAll($sql);
         // Convert query result to an array of domain objects
@@ -41,7 +41,7 @@ class CarModel extends Model
     public function carsCountByType()
     {
         $sql = 'SELECT `typeid`, COUNT(`id`) AS C
-                FROM car
+                FROM Car
                 GROUP BY (`typeid`)
                 ORDER BY id ASC';
         $result = $this->getDb()->fetchAll($sql);
@@ -61,7 +61,7 @@ class CarModel extends Model
     public function load_from_database()
     {
         $sql = 'SELECT `id`, `typeid`, `serial`
-                FROM car
+                FROM Car
                 ORDER BY id ASC';
 
         return $this->getDb()->fetchAll($sql);
@@ -69,7 +69,7 @@ class CarModel extends Model
 
     public function save(Car $car)
     {
-        $stmt = $this->getDb()->prepare('INSERT INTO car
+        $stmt = $this->getDb()->prepare('INSERT INTO Car
             (`id`, `typeid`, `serial`) 
             VALUES
             (null, :type, :serial)');
@@ -85,7 +85,7 @@ class CarModel extends Model
     public function getLastInsertedCar()
     {
         $sql = 'SELECT `id`, `typeid`, `serial`
-                FROM car
+                FROM Car
                 ORDER BY `id` DESC LIMIT 1';
         $row = $this->getDb()->fetchAssoc($sql);
 

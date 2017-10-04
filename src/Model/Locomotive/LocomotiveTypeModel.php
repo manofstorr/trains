@@ -1,11 +1,11 @@
 <?php
 
-namespace trains\Model\Locomotive;
+namespace Trains\Model\Locomotive;
 
-use trains\Model\EnergyModeModel;
-use trains\Model\Model;
-use trains\Entity\Locomotive\LocomotiveType;
-use trains\Model\EnergyMode;
+use Trains\Model\EnergyModeModel;
+use Trains\Model\Model;
+use Trains\Entity\Locomotive\LocomotiveType;
+use Trains\Model\EnergyMode;
 
 class LocomotiveTypeModel extends Model
 {
@@ -37,7 +37,7 @@ class LocomotiveTypeModel extends Model
         if ($row) {
             return $this->buildEntityObject($row);
         } else {
-            throw new \Exception("No locomotive type matching id " . $locomotiveTypeId);
+            throw new \Exception("No Locomotive type matching id " . $locomotiveTypeId);
         }
 
     }

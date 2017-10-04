@@ -1,8 +1,7 @@
 <?php
 
-namespace trains\Model\Car;
+namespace Trains\Model\Car;
 
-use trains\Model\Car;
 
 class CarsIterator implements \Iterator
 {

@@ -6,7 +6,7 @@
  * Time: 12:27
  */
 
-namespace trains\Entity;
+namespace Trains\Entity;
 
 
 class EnergyMode

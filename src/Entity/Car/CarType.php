@@ -1,6 +1,6 @@
 <?php
 
-namespace trains\Entity\Car;
+namespace Trains\Entity\Car;
 
 class CarType
 {

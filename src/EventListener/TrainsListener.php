@@ -1,10 +1,10 @@
 <?php
 
-namespace trains\EventListener;
+namespace Trains\EventListener;
 
-use trains\Service\Message\MessageService;
+use Trains\Service\Message\MessageService;
 
-class trainsListener
+class TrainsListener
 {
     public function onCarCreate($event)
     {

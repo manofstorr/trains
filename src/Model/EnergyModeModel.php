@@ -6,10 +6,9 @@
  * Time: 12:28
  */
 
-namespace trains\Model;
+namespace Trains\Model;
 
-use trains\Model\Model;
-use trains\Entity\EnergyMode;
+use Trains\Entity\EnergyMode;
 
 class EnergyModeModel extends Model
 {
@@ -48,7 +47,7 @@ class EnergyModeModel extends Model
      * Creates an energy mode object based on a DB row.
      *
      * @param array $row The DB row containing LocomotiveType data.
-     * @return \trains\Entity\EnergyMode
+     * @return \Trains\Entity\EnergyMode
      */
     protected function buildEntityObject(array $row)
     {

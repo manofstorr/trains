@@ -1,6 +1,6 @@
 <?php
 
-namespace trains\Service\Message;
+namespace Trains\Service\Message;
 
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Message\AMQPMessage;

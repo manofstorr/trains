@@ -6,7 +6,7 @@
  * Time: 16:03
  */
 
-namespace trains\Controller;
+namespace Trains\Controller;
 
 use Silex\Application;
 
@@ -14,6 +14,6 @@ class MetierController
 {
     public function rollingStockCreateAction(Application $app)
     {
-        return $app['twig']->render('metier/rollingStockCreate.html.twig');
+        return $app['twig']->render('Metier/RollingStockCreate.html.twig');
     }
 }

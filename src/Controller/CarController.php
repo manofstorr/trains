@@ -3,10 +3,10 @@
 namespace trains\Controller;
 
 use Silex\Application;
-use trains\Entity\Car\Car;
-use trains\Model\Car\CarsIterator;
-use trains\Metier;
-use trains\Event\carCreateEvent;
+use Trains\Entity\Car\Car;
+use Trains\Model\Car\CarsIterator;
+use Trains\Metier;
+use Trains\Event\carCreateEvent;
 
 class CarController
 {
@@ -30,7 +30,7 @@ class CarController
                 echo 'Exception reçue : ', $e->getMessage(), "\n";
             }
         }
-        return $app['twig']->render('car/carCreated.html.twig', ['car' => $car]);
+        return $app['twig']->render('Car/CarCreated.html.twig', ['Car' => $car]);
 
     }
 
@@ -39,9 +39,9 @@ class CarController
     {
         // CarsType list
         $carTypes = $app['model.carType']->findAll();
-        $carsCountByType = $app['model.car']->carsCountByType();
+        $carsCountByType = $app['model.Car']->carsCountByType();
 
-        return $app['twig']->render('car/carTypesView.html.twig',
+        return $app['twig']->render('Car/CarTypesView.html.twig',
             ['carTypes' => $carTypes, 'carsCountByType' => $carsCountByType]
         );
     }
@@ -54,8 +54,8 @@ class CarController
      */
     public function collectionAction(Application $app)
     {
-        $cars = $app['model.car']->findAll();
-        return $app['twig']->render('car/carCollection.html.twig', ['cars' => $cars]);
+        $cars = $app['model.Car']->findAll();
+        return $app['twig']->render('Car/CarCollection.html.twig', ['cars' => $cars]);
     }
 
     /**
@@ -66,13 +66,13 @@ class CarController
      */
     public function collectionGeneratorAction(Application $app)
     {
-        $generator = $app['model.car']->carGenerator();
+        $generator = $app['model.Car']->carGenerator();
         $cars = [];
         foreach ($generator as $cardata) {
             $carId = $cardata['id'];
-            $cars[$carId] = $app['model.car']->buildEntityObject($cardata);
+            $cars[$carId] = $app['model.Car']->buildEntityObject($cardata);
         }
-        return $app['twig']->render('car/carCollection.html.twig', ['cars' => $cars]);
+        return $app['twig']->render('Car/CarCollection.html.twig', ['cars' => $cars]);
     }
 
 
@@ -85,7 +85,7 @@ class CarController
     public function byTypeCollectionAction ($id, Application $app)
     {
         // data
-        $allCars = $app['model.car']->findAll();
+        $allCars = $app['model.Car']->findAll();
         $carsFiltered = [];
 
         // iterator ...
@@ -103,7 +103,7 @@ class CarController
         // type name
         $type = $app['model.carType']->findById($id);
 
-        return $app['twig']->render('car/carCollection.html.twig', ['cars' => $carsFiltered, 'type' => $type]);
+        return $app['twig']->render('Car/CarCollection.html.twig', ['cars' => $carsFiltered, 'type' => $type]);
 
     }
 

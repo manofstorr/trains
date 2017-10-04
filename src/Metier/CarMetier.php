@@ -1,8 +1,8 @@
 <?php
 
-namespace trains\Metier;
+namespace Trains\Metier;
 
-trait carMetier
+trait CarMetier
 {
 
     public function getRandomCarData()

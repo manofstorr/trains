@@ -26,11 +26,11 @@ $app->register(new Provider\WebProfilerServiceProvider(), array(
     'profiler.mount_prefix' => '/_profiler', // this is the default
 ));
 
-$listener = new trains\EventListener\trainsListener();
+//$listener = new Trains\EventListener\TrainsListener();
 //$app['dispatcher']->addListener('carcreate', array($listener, 'onCarCreate'));
 
 $app['dispatcher']->addListener('carcreate', function (Symfony\Component\EventDispatcher\Event $event) {
-    $listener = new trains\EventListener\trainsListener();
+    $listener = new Trains\EventListener\TrainsListener();
     $listener->onCarCreate($event);
 });
 

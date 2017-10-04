@@ -6,7 +6,7 @@
  * Time: 09:31
  */
 
-namespace trains\Entity\Car;
+namespace Trains\Entity\Car;
 
 use Silex\Application;
 
@@ -15,7 +15,7 @@ class Car
 
     private $id;
     /**
-     * Associated car type.
+     * Associated Car type.
      *
      * @var \trains\Entity\Car\CarType
      */
@@ -89,7 +89,7 @@ class Car
 
     public function persist(Application $app)
     {
-        $newCarId = $app['model.car']->save($this);
+        $newCarId = $app['model.Car']->save($this);
         if ($newCarId) {
             $this->setId($newCarId);
         } else {

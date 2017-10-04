@@ -6,7 +6,7 @@
  * Time: 10:59
  */
 
-namespace trains\Entity\Locomotive;
+namespace Trains\Entity\Locomotive;
 
 
 class LocomotiveType

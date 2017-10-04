@@ -25,7 +25,7 @@ USE `trains`;
 -- --------------------------------------------------------
 
 --
--- Structure de la table `car`
+-- Structure de la table `Car`
 --
 
 CREATE TABLE `car` (
@@ -37,7 +37,7 @@ CREATE TABLE `car` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `locomotive`
+-- Structure de la table `Locomotive`
 --
 
 CREATE TABLE `locomotive` (
@@ -52,13 +52,13 @@ CREATE TABLE `locomotive` (
 --
 
 --
--- Index pour la table `car`
+-- Index pour la table `Car`
 --
 ALTER TABLE `car`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `locomotive`
+-- Index pour la table `Locomotive`
 --
 ALTER TABLE `locomotive`
   ADD PRIMARY KEY (`id`);
@@ -68,12 +68,12 @@ ALTER TABLE `locomotive`
 --
 
 --
--- AUTO_INCREMENT pour la table `car`
+-- AUTO_INCREMENT pour la table `Car`
 --
 ALTER TABLE `car`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT pour la table `locomotive`
+-- AUTO_INCREMENT pour la table `Locomotive`
 --
 ALTER TABLE `locomotive`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;

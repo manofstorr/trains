@@ -1,4 +1,4 @@
-{% extends 'layout/mainlayout.html.twig' %}
+{% extends 'Layout/Mainlayout.html.twig' %}
 
 {% block titlecontent %}Cars{% endblock %}
 
@@ -8,5 +8,5 @@
 
 {% block bodycontent %}
     {{ car.id }}
-    {% include 'car/carShortView.html.twig' with {'car' : car} %}
+    {% include 'Car/CarShortView.html.twig' with {'Car' : car} %}
 {% endblock %}

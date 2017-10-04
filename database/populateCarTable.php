@@ -2,7 +2,7 @@
 
 /* this script populates cars Table */
 
-// rand car type
+// rand Car type
 $carTypes = [
     1 => 'Fret',
     2 => 'Fret',
@@ -17,7 +17,7 @@ for ($i=0 ; $i<100;$i++ ) {
     $carSerial = $carSerialPrefix . 'S' . rand(10000, 99999);
 
     $sql .= '
-    INSERT INTO car 
+    INSERT INTO Car 
     (`id`, `typeid`, `serial`) 
     VALUES 
     (null, '.$carType.', "'.$carSerial.'");';

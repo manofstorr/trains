@@ -1,9 +1,9 @@
 <?php
 
-namespace trains\Model\Car;
+namespace Trains\Model\Car;
 
-use trains\Model\Model;
-use trains\Entity\Car\CarType;
+use Trains\Model\Model;
+use Trains\Entity\Car\CarType;
 
 class CarTypeModel extends Model
 {
@@ -35,7 +35,7 @@ class CarTypeModel extends Model
         if ($row) {
             return $this->buildEntityObject($row);
         } else {
-            throw new \Exception("No car type matching id " . $carTypeId);
+            throw new \Exception("No Car type matching id " . $carTypeId);
         }
     }
 

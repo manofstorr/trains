@@ -1,9 +1,9 @@
 <?php
 
-namespace trains\Metier;
+namespace Trains\Metier;
 
 
-class showcase
+class Showcase
 {
     static public function square($n)
     {

@@ -6,7 +6,7 @@
  * Time: 11:10
  */
 
-namespace trains\Model;
+namespace Trains\Model;
 
 use Doctrine\DBAL\Connection;
 

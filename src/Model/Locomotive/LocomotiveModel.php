@@ -1,9 +1,9 @@
 <?php
 
-namespace trains\Model\Locomotive;
+namespace Trains\Model\Locomotive;
 
-use trains\Model\Model;
-use trains\Entity\Locomotive\Locomotive;
+use Trains\Model\Model;
+use Trains\Entity\Locomotive\Locomotive;
 
 class LocomotiveModel extends Model
 {
@@ -11,7 +11,7 @@ class LocomotiveModel extends Model
     function findAll()
     {
         $sql = 'SELECT `id`, `typeid`, `serial`, `releasedate`
-                FROM locomotive
+                FROM Locomotive
                 ORDER BY id ASC';
         $result = $this->getDb()->fetchAll($sql);
         // Convert query result to an array of domain objects
